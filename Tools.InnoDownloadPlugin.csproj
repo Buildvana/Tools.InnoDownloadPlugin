@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.Build.NoTargets">
+
+  <PropertyGroup>
+
+    <!-- The project system needs this. We don't. -->
+    <TargetFramework>netstandard1.3</TargetFramework>
+
+    <!-- Remove the <dependencies> tag from .nupkg, because it makes the package "depend" on our TargetPlatform. -->
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+
+    <!-- Package metadata -->
+    <Version>1.5.1</Version>
+    <IsPackable>true</IsPackable>
+    <IsTool>true</IsTool>
+    <IncludeSymbols>false</IncludeSymbols>
+    <Description>Inno Download Plugin by Mitrich Software, packaged for use in MSBuild projects.</Description>
+    <Authors>rdeago</Authors>
+    <Copyright>Copyright (c) 2013-2015 Mitrich Software</Copyright>
+    <PackageLicenseFile>tools\COPYING.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>setup installer innosetup</PackageTags>
+    <DevelopmentDependency>true</DevelopmentDependency>
+
+  </PropertyGroup>
+
+  <!-- Package contents -->
+  <ItemGroup>
+    <Content Include="README.md" PackagePath="%(Identity)" />
+    <Content Include="build\**\*" PackagePath="%(Identity)" />
+    <Content Include="buildMultiTargeting\**\*" PackagePath="%(Identity)" />
+    <Content Include="tools\**\*" PackagePath="%(Identity)" />
+  </ItemGroup>
+
+</Project>
