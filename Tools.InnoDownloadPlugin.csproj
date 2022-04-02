@@ -27,7 +27,6 @@
   <ItemGroup>
     <Content Include="README.md" PackagePath="%(Identity)" />
     <Content Include="build\**\*" PackagePath="%(Identity)" />
-    <Content Include="buildMultiTargeting\**\*" PackagePath="%(Identity)" />
     <Content Include="tools\**\*" PackagePath="%(Identity)" />
   </ItemGroup>
 
